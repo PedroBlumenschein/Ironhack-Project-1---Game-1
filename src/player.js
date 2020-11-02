@@ -4,13 +4,14 @@ class Player {
     constructor (x, y) {
         this.x = x;
         this.y = y;
+        this.image;
     }
 
 
     drawPlayer() {
         clear()
         game.background.drawBackground();
-        rect(this.x, this.y, 55, 55)
+        image(this.image,this.x, this.y, 40, 100)
     }
 
     moveUp() {
