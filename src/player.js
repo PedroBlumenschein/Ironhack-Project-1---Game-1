@@ -5,6 +5,7 @@ class Player {
         this.x = x;
         this.y = y;
         this.image;
+        this.score = 0;
     }
 
 

@@ -35,7 +35,7 @@ class Game {
             console.log('print obstacle')
             const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
             const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
-            this.obstacles.push(new Obstacle (randomImage, randomDirection ));
+            this.obstacles.push(new Obstacle (randomImage, randomDirection));
             console.log(this.obstacles);
         }
 
@@ -43,6 +43,15 @@ class Game {
             item.drawObstacle();
             item.moveHorizontaly();
         })
+
+
+        // this.obstacles = this.obstacles.filter( function (item) {
+        //     if (item.collision(this.player) || item.x < 0) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // })
 
 
 
