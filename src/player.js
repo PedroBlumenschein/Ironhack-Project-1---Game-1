@@ -54,6 +54,16 @@ class Player {
 
     }
 
+    playerWin () {
+        console.log('playerWin works')
+
+    }
+
+
+    playerLost () {
+        console.log('playerLost works')
+    }
+
 
 
 

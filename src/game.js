@@ -1,8 +1,8 @@
 class Game {
     preloadGame () {
         //console.log('gamePreload works')
-        this.backgroundImage = loadImage("https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?cs=srgb&dl=pexels-fwstudio-129731.jpg&fm=jpg")
-        this.playerImage = loadImage("/assets/samba.png")
+        this.backgroundImage = loadImage("/assets/ilustratedBackground2.png")
+        this.playerImage = loadImage("/assets/Samba2.png")
         this.obstacleImage1 = loadImage("/assets/chicken.png")
         this.obstacleImage2 = loadImage("/assets/burrito.png")
         this.obstacleImage3 = loadImage("/assets/steak.png")
@@ -25,36 +25,48 @@ class Game {
     }
 
     drawGame () {
-        //console.log('drawGame works')
-        this.background.drawBackground();
-        this.player.drawPlayer();
-        
-        
 
-        if (frameCount % 40 === 0) {
-            console.log('print obstacle')
-            const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
-            const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
-            this.obstacles.push(new Obstacle (randomImage, randomDirection));
+        if (this.player.y < -50) {
+            this.player.playerWin()
+
+        }
+        else if (this.player.score > 4) {
+            this.player.playerLost()
             
-            console.log(this.obstacles);
+        } 
+        else {
+            console.log(this.player.y)
+
+
+            this.background.drawBackground();
+            this.player.drawPlayer();
+            
+            if (frameCount % 40 === 0) {
+                console.log('print obstacle')
+                const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
+                const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
+                this.obstacles.push(new Obstacle (randomImage, randomDirection));
+                
+                console.log(this.obstacles);
+            }
+    
+            this.obstacles.forEach (function (item) {
+                item.drawObstacle();
+                item.moveHorizontaly();
+            })
+    
+    
+            this.obstacles = this.obstacles.filter( (item) => {
+                if (item.collision(this.player) || item.x < 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            })
         }
 
-        this.obstacles.forEach (function (item) {
-            item.drawObstacle();
-            item.moveHorizontaly();
-        })
 
 
-        this.obstacles = this.obstacles.filter( (item) => {
-            if (item.collision(this.player) || item.x < 0) {
-                return false;
-            } else {
-                return true;
-            }
-        })
-        //why does this only work with an arrow function and not with "function (item)"? 
-        //console.log(this.player.x, this.player.y)
     }
 }
 
