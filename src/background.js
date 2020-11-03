@@ -4,6 +4,6 @@ class Background {
     }
 
     drawBackground() {
-        image(this.image, 0, 0, 500, 700)
+        image(this.image, 0, 0, 1000, 800)
     }
 }

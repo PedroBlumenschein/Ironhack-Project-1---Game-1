@@ -20,7 +20,7 @@ class Game {
 
         this.obstacles = [];
         this.obstaclesImages = [this.obstacleImage1, this.obstacleImage2, this.obstacleImage3]
-        this.obstacleDirections = [1, 0]
+        this.obstacleDirections = [width, 0]
 
     }
 
@@ -36,6 +36,7 @@ class Game {
             const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
             const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
             this.obstacles.push(new Obstacle (randomImage, randomDirection));
+            
             console.log(this.obstacles);
         }
 
@@ -45,25 +46,15 @@ class Game {
         })
 
 
-        // this.obstacles = this.obstacles.filter( function (item) {
-        //     if (item.collision(this.player) || item.x < 0) {
-        //         return false;
-        //     } else {
-        //         return true;
-        //     }
-        // })
-
-
-
-        
+        this.obstacles = this.obstacles.filter( (item) => {
+            if (item.collision(this.player) || item.x < 0) {
+                return false;
+            } else {
+                return true;
+            }
+        })
+        //why does this only work with an arrow function and not with "function (item)"? 
         //console.log(this.player.x, this.player.y)
     }
-
-
 }
 
-
-//preload different images 
-//Setup we need to create an array of the images 
-//when the obstacle is created, we need to assign a random image to it 
-//imagesArr new Obstacle (imagesArr[Math.floor(Math.random()* imagesArr.length)])
