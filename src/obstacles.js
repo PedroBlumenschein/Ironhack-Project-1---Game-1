@@ -23,11 +23,11 @@ class Obstacle {
 
     moveHorizontaly() {
         if (this.direction === 0) {
-            this.x += 1
+            this.x += 5
         }
 
         if (this.direction === width) {
-            this.x -= 1
+            this.x -= 5
         }
     }
 
