@@ -5,7 +5,7 @@ class Game {
 
     preloadGame () {
         //------------------Background Images----------------------------
-        this.level1BackgroundImage = loadImage("/assets/backgroundWithPark.png")
+        this.level1BackgroundImage = loadImage("/assets/Level1BackgroundImage.png")
         this.level2BackgroundImage = loadImage("/assets/Level2Background.png")
         
         //----------------------Player images----------------------------
