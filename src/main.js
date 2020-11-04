@@ -25,23 +25,23 @@ function draw() {
 
     //function keyPressed () {
         //move up
-    if (keyIsDown(38)) {
+    if (keyIsDown(38) && game.player.y > -51) {
         game.player.moveUp()
     }
 
     // move down
-    if (keyIsDown(40) && game.player.y > -49) {
+    if (keyIsDown(40) && game.player.y < height-70 && game.player.y > -49) {
         game.player.moveDown()
     }
 
     // move left
-    if (keyIsDown(37)) {
+    if (keyIsDown(37) && game.player.x > 0) {
         game.player.moveLeft()
 
     }
 
     //move right
-    if (keyIsDown(39)) {
+    if (keyIsDown(39) && game.player.x < width-30) {
         game.player.moveRight()
     }
 

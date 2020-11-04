@@ -24,12 +24,24 @@ class Obstacle {
     }
 
     moveHorizontaly() {
-        if (this.direction === -20) {
-            this.x += 5
+        if (game.level === 1) {
+            if (this.direction === -20) {
+                this.x += 5
+            }
+    
+            if (this.direction === width) {
+                this.x -= 5
+            }
         }
 
-        if (this.direction === width) {
-            this.x -= 5
+        else if (game.level === 2) {
+            if (this.direction === -20) {
+                this.x += 10
+            }
+    
+            if (this.direction === width) {
+                this.x -= 10
+            }
         }
     }
 
@@ -50,22 +62,3 @@ class Obstacle {
     }
 }
 
-//Directions
-// - Need to create an array with the direction possibilities 
-// - Randomly assign a starting point to the obstacle when creating it (same as we are doing for the images)
-// - Depending on the random direction applied, need to set x++ or x--.
-
-//Expected behaviour: Depending on a randomly assigned direction, 
-//the obstacle should start left and go right, or start right and go left
-
-
-//Colision RESOLVED (Pending Doubt)
-// - need to check if the distance between the obstacle and player has reached a certain threshold, 
-// and if yes, THEN: player.score += 1 AND return true (the value returned will be used for the filter)
-// - Need to hide the obstacles that have colided with the player (filter them out)
-// - Why does this only work with an arrow function and not with "function (item)"? 
-
-
-
-//Key Pressed
-// ?

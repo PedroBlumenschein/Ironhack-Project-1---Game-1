@@ -6,22 +6,23 @@ class Game {
     preloadGame () {
         //------------------Background Images----------------------------
         this.level1BackgroundImage = loadImage("/assets/backgroundWithPark.png")
-        this.level2BackgroundImage = loadImage("/assets/BackgroundLevel2.png")
+        this.level2BackgroundImage = loadImage("/assets/Level2Background.png")
         
         //----------------------Player images----------------------------
         this.playerImage = loadImage("/assets/Samba2.png")
         this.playerImageLevel2 = loadImage("/assets/unicorn.png")
         
         //---------------------obstacle images---------------------------
+        //food
         this.obstacleImage1 = loadImage("/assets/hamburger_1f354.png")
         this.obstacleImage2 = loadImage("/assets/shaved-ice_1f367.png")
         this.obstacleImage3 = loadImage("/assets/chocolate-bar_1f36b.png")
         this.obstacleImage4 = loadImage("/assets/doughnut_1f369.png")
 
-        // this.onbstacleImage5 = loadImage("")
-        // this.onbstacleImage6 = loadImage("")
-        // this.onbstacleImage7 = loadImage("")
-        // this.onbstacleImage8 = loadImage("")
+        //sweets
+        this.obstacleImage5 = loadImage("/assets/mushroomObstacle.png")
+        this.obstacleImage6 = loadImage("/assets/sushiObstacle.png")
+        this.obstacleImage7 = loadImage("/assets/watermelonOBstacle.png")
         
         //---------------------Win/lose Images---------------------------
         this.playerWonImage = loadImage("/assets/SambaGif.gif")
@@ -44,7 +45,15 @@ class Game {
         //-----------------------Arrays Setup---------------------------
         this.obstacles = [];
         
-        this.obstaclesImages = [this.obstacleImage1, this.obstacleImage2, this.obstacleImage3, this.obstacleImage4]
+        this.obstaclesImages = [
+            this.obstacleImage1, 
+            this.obstacleImage2, 
+            this.obstacleImage3, 
+            this.obstacleImage4,
+            this.obstacleImage5,
+            this.obstacleImage6,
+            this.obstacleImage7
+            ]
         
         this.obstacleDirections = [width, -20]
 
@@ -80,7 +89,7 @@ class Game {
                 
                 if (frameCount % 10 === 0) {
                     console.log('print obstacle')
-                    const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
+                    const randomImage = this.obstaclesImages[Math.floor(Math.random() * (this.obstaclesImages.length-3))];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
                     this.obstacles.push(new Obstacle (randomImage, randomDirection));
                     
@@ -128,7 +137,7 @@ class Game {
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
-                if (frameCount % 10 === 0) {
+                if (frameCount % 8 === 0) {
                     console.log('print obstacle')
                     const randomImage = this.obstaclesImages[Math.floor(Math.random() * this.obstaclesImages.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
