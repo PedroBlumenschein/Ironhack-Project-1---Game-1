@@ -1,45 +1,58 @@
 
 
 class Player {
-    constructor (x, y) {
-        this.x = x;
-        this.y = y;
+    constructor (image, imageLevel2) {
+        this.x = width/10 *4;
+        this.y = height/10*9;
 
         this.width = 40
         this.height = 100
 
-        this.image;
-
         this.score = 0;
+
+        this.image = image;
+        this.imageLevel2 = imageLevel2;
     }
 
 
     drawPlayer() {
-        clear()
-        game.background.drawBackground();
-        image(this.image,this.x, this.y, 40, 100)
+
+        if (game.level === 1) {
+            clear()
+            game.background.drawBackground();
+            image(this.image,this.x, this.y, 40, 100)
+        }
+
+        else if (game.level === 2) {
+            clear()
+            game.background.drawBackground();
+            image(this.imageLevel2,this.x, this.y, 80, 80)
+        }
+        
+
+
 
     }
 
     moveUp() {
-        console.log('moveUp works')
+        //console.log('moveUp works')
         this.y -= 10
 
     }
 
     moveDown() {
-        console.log('moveDown works')
+        //console.log('moveDown works')
         this.y += 10
     }
 
     moveLeft() {
-        console.log('moveLeft works')
+        //console.log('moveLeft works')
         this.x -= 10
 
     }
 
     moveRight() {
-        console.log('moveRight works')
+        //console.log('moveRight works')
         this.x += 10
         
     }
@@ -55,15 +68,39 @@ class Player {
     }
 
     playerWin () {
-        console.log('playerWin works')
+        
+        //console.log('playerWin works')
+        game.drawRectangle()
+        text(`You are a good 
+dog walker!`, 500, 300)
+        game.drawButton()
+        text(`Next level`, 495, 525)
+        
 
     }
 
 
     playerLost () {
-        console.log('playerLost works')
+        //console.log('playerLost works')
+        game.drawRectangle()
+        textSize(36);
+        text(`Ops, Samba ate 
+something! You are not 
+a very good dog walker :(`, 500, 300)
+        game.drawButton()
+        text(`Try again`, 495, 525)
     }
 
+    playerGoToNextLevel() {
+        game.level += 1
+        console.log(`the game level is ${game.level}`)
+        game.setupGame()
+    }
+
+    playerTryAgain() {
+        console.log('try again clicked')
+        location.reload()
+    }
 
 
 

@@ -5,10 +5,12 @@ class Obstacle {
         this.direction = direction;
 
         this.x = direction;
-        this.y = (Math.random() * height/10) * 8;;
+        this.y = (Math.random() * height/10) * 8;
 
-        this.width = 50
-        this.height = 50
+        this.speed = frameCount % 10;
+
+        this.width = 50;
+        this.height = 50;
 
         this.image = image;
         
@@ -22,7 +24,7 @@ class Obstacle {
     }
 
     moveHorizontaly() {
-        if (this.direction === 0) {
+        if (this.direction === -20) {
             this.x += 5
         }
 
@@ -31,17 +33,6 @@ class Obstacle {
         }
     }
 
-    //this function is not being used anywhere
-    placeObstacle() {
-        if (this.direction === 0) {
-            this.x = width;
-        }
-
-        if (this.direction === 1) {
-            this.x = 0;
-        }
-        
-    }
 
     collision(playerInfo) {
         let obstacleX = this.x + this.width/2
@@ -49,11 +40,11 @@ class Obstacle {
         let playerX = playerInfo.x + playerInfo.width / 2;
         let playerY = playerInfo.y + playerInfo.height / 2;
 
-        if (dist(obstacleX, obstacleY, playerX, playerY) > 15) {
+        if (dist(obstacleX, obstacleY, playerX, playerY) > 25) {
             return false;
         } else {
             game.player.increaseScore();
-            console.log(`colision works and the player score is ${game.player.score}`)
+            //console.log(`colision works and the player score is ${game.player.score}`)
             return true;
         }
     }

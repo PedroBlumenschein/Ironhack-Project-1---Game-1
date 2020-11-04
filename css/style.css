@@ -9,8 +9,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-   
-
+    /* background-color: #f0f0ec; */
 }
 
 .section1 {
@@ -21,6 +20,7 @@ body {
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
+    color: #444444;
 }
 
 h1 {
@@ -44,4 +44,9 @@ h3 {
 canvas {
     border-radius: 1vw;
     margin-top: 50px;
+}
+
+.trademark h4 {
+    color: gainsboro;
+    font-weight: 100;
 }
