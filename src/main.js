@@ -14,7 +14,7 @@ function preload() {
 
 
 function setup() {
-    let canvas = createCanvas(1000, 800)
+    let canvas = createCanvas(750, 600)
     game.setupGame();
 }
 
@@ -30,7 +30,7 @@ function draw() {
     }
 
     // move down
-    if (keyIsDown(40) && game.player.y < height-70 && game.player.y > -49) {
+    if (keyIsDown(40) && game.player.y < height-50 && game.player.y > -49) {
         game.player.moveDown()
     }
 
@@ -41,7 +41,7 @@ function draw() {
     }
 
     //move right
-    if (keyIsDown(39) && game.player.x < width-30) {
+    if (keyIsDown(39) && game.player.x < width-20) {
         game.player.moveRight()
     }
 
@@ -57,15 +57,15 @@ function draw() {
 
 //mouse click on pop up inside
 function mouseClicked() {
-    if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 && game.level === 3) {
+    if (mouseX > 288.75 && mouseX < 453.75 && mouseY > 375 && mouseY < 412.5 && game.player.y < -30 && game.level === 3) {
         addWinningGif()
     }
 
-    else if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 ) {
+    else if (mouseX > 288.75 && mouseX < 453.75 && mouseY > 375 && mouseY < 412.5 && game.player.y < -30 ) {
         game.player.playerGoToNextLevel()
     }
     
-    else if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.score > 0) {
+    else if (mouseX > 288.75 && mouseX < 453.75 && mouseY > 375 && mouseY < 412.5 && game.player.score > 0) {
                 game.player.playerTryAgain()
             }
 }

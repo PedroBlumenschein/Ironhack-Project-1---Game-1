@@ -260,19 +260,19 @@ class Game {
 
         fill('#FFFFFF');
         noStroke()
-        const popup = rect(200, 150, width/10*6, height/10*6, 12, 12, 12, 12);
+        const popup = rect(150, 112.5, width/10*6, height/10*6, 12, 12, 12, 12);
 
         const popupFill = fill(68, 68, 68, 1000);
-        const popupTextSize = textSize(48);
+        const popupTextSize = textSize(36);
         const popupTextFont = textFont('Montserrat')
         const popupTextAlign = textAlign(CENTER,CENTER)
     }
 
     drawButton() {
         const buttonFill = fill('rgba(166,68, 214, 1)');
-        const button = rect(385, 500, 220, 50, 100, 100, 100, 100);
+        const button = rect(288.75, 375, 165, 37.5, 100, 100, 100, 100);
         const buttonTextFill = fill('#F0F0EC');
-        const buttonTextSize = textSize(24);
+        const buttonTextSize = textSize(18);
     }
 
 }

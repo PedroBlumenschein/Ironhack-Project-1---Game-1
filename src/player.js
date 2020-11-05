@@ -2,11 +2,11 @@
 
 class Player {
     constructor (image, imageLevel2, imageLevel3) {
-        this.x = width/10 *4;
+        this.x = width/10 * 5 - 25;
         this.y = height/10*9;
 
-        this.width = 40
-        this.height = 100
+        this.width = 30
+        this.height = 75
 
         this.score = 0;
 
@@ -78,9 +78,9 @@ class Player {
          //console.log('playerWin works')
         game.drawRectangle()
         text(`You are a good 
-dog walker!`, 500, 300)
+dog walker!`, 375, 225)
         game.drawButton()
-        text(`Next level`, 495, 525)
+        text(`Next level`, 371.25, 393.75)
         
 
     }
@@ -88,12 +88,13 @@ dog walker!`, 500, 300)
     playerLost () {
         //console.log('playerLost works')
         game.drawRectangle()
-        textSize(36);
-        text(`Ops, Samba ate 
-something! You are not 
-a very good dog walker :(`, 500, 300)
+        textSize(32);
+        text(`Ops, Samba 
+ate something! You 
+are not a very good 
+dog walker :(`, 375, 225)
         game.drawButton()
-        text(`Try again`, 495, 525)
+        text(`Try again`, 371.25, 393.75)
     }
 
     playerGoToNextLevel() {
@@ -109,15 +110,15 @@ a very good dog walker :(`, 500, 300)
 
     playerWonGame() {
         game.drawRectangle()
-        textSize(36);
+        textSize(24);
         text(`Chapeau, 
 you are one of the best 
-dog walkers around. 
+dog walkers around! 
 Are you ready to receive
 a congrats directly from 
-Samba? `, 500, 300)
+Samba? `, 375, 225)
         game.drawButton()
-        text(`See congrats`, 495, 525)
+        text(`See congrats`, 371.25, 393.75)
 
     }
 

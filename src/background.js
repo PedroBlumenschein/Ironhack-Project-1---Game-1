@@ -7,13 +7,13 @@ class Background {
 
     drawBackground() {
         if (game.level === 1) {
-            image(this.image, 0, 0, 1000, 800)
+            image(this.image, 0, 0, 752, 600)
         }
         else if (game.level === 2) {
-            image(this.imageLevel2, 0, 0, 1000, 800)
+            image(this.imageLevel2, 0, 0, 752, 600)
         }
         else if (game.level === 3) {
-            image(this.imageLevel3, 0, 0, 1000, 800)
+            image(this.imageLevel3, 0, 0, 752, 600)
         }
         
     }

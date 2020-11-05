@@ -9,8 +9,8 @@ class Obstacle {
 
         this.speed = frameCount % 10;
 
-        this.width = 50;
-        this.height = 50;
+        this.width = 35;
+        this.height = 35;
 
         this.image = image;
         
@@ -18,7 +18,7 @@ class Obstacle {
     }
 
     drawObstacle () {
-        image(this.image, this.x, this.y, 50, 50 )
+        image(this.image, this.x, this.y, this.width, this.height)
         this.collision(game.player);
         
     }
