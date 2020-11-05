@@ -13,7 +13,7 @@ class Game {
         //----------------------Player images----------------------------
         this.playerImage = loadImage("./assets/Samba2.png")
         this.playerImageLevel2 = loadImage("./assets/unicorn.png")
-        this.playerImageLevel3 = loadImage("/assets/Samba2.png")
+        this.playerImageLevel3 = loadImage("./assets/Samba2.png")
         
         //---------------------obstacle images---------------------------
         
