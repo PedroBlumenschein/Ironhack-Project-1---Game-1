@@ -13,6 +13,8 @@ class Obstacle {
         this.height = 35;
 
         this.image = image;
+
+        this.impactDistance = 40
         
 
     }
@@ -62,7 +64,7 @@ class Obstacle {
         let playerX = playerInfo.x + playerInfo.width / 2;
         let playerY = playerInfo.y + playerInfo.height / 2;
 
-        if (dist(obstacleX, obstacleY, playerX, playerY) > 40) {
+        if (dist(obstacleX, obstacleY, playerX, playerY) > this.impactDistance) {
             return false;
         } else {
             game.player.increaseScore();

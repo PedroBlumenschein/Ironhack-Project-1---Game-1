@@ -12,7 +12,7 @@ class Game {
         
         //----------------------Player images----------------------------
         this.playerImage = loadImage("./assets/Samba2.png")
-        this.playerImageLevel2 = loadImage("./assets/unicorn.png")
+        this.playerImageLevel2 = loadImage("./assets/Samba2.png")
         this.playerImageLevel3 = loadImage("./assets/Samba2.png")
         
         //---------------------obstacle images---------------------------
@@ -51,9 +51,8 @@ class Game {
         this.player = new Player(this.playerImage, this.playerImageLevel2, this.playerImageLevel3)
      
 
-        // -------------------Classes Images Setup----------------------
-        //this.background.image = this.level1BackgroundImage
-        //this.player.image = this.playerImage
+        // -------------------Levels Score Setup----------------------
+        game.player.score = levelScoreStore;
 
 
         //-----------------------Arrays Setup---------------------------
@@ -97,21 +96,29 @@ class Game {
         console.log('drawGame works')
         
 
+
         // ---------------------Level 1---------------------------------
         if (this.level === 1) {
 
-            if (this.player.y < -50) {
+
+
+            if (this.player.y < -30 && this.player.score < this.player.scoreLimit) {
                 this.player.playerWin()
+
+                this.drawScore();
 
     
             }
     
-            else if (this.player.score > 5) {
+            else if (this.player.score > this.player.scoreLimit) {
                 this.player.playerLost()
+
+                this.drawScore();
 
             } 
     
             else {
+
                 console.log(this.player.y)
     
     
@@ -140,6 +147,8 @@ class Game {
                         return true;
                     }
                 })
+
+                this.drawScore();
             }
             
         }
@@ -148,14 +157,18 @@ class Game {
 
         else if (this.level === 2) {
 
-            if (this.player.y < -50) {
+            if (this.player.y < -30 && this.player.score < this.player.scoreLimit) {
                 this.player.playerWin()
+
+                this.drawScore();
 
     
             }
     
-            else if (this.player.score > 5) {
+            else if (this.player.score > this.player.scoreLimit) {
                 this.player.playerLost()
+
+                this.drawScore();
 
             } 
     
@@ -190,6 +203,8 @@ class Game {
                         return true;
                     }
                 })
+
+                this.drawScore();
             }
             
         }
@@ -198,14 +213,18 @@ class Game {
 
         else if (this.level === 3) {
 
-            if (this.player.y < -50) {
+            if (this.player.y < -30 && this.player.score < this.player.scoreLimit) {
                 this.player.playerWonGame()
+
+                this.drawScore();
 
     
             }
     
-            else if (this.player.score > 5) {
+            else if (this.player.score > this.player.scoreLimit) {
                 this.player.playerLost()
+
+                this.drawScore();
 
             } 
     
@@ -218,7 +237,7 @@ class Game {
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
-                if (frameCount % 3 === 0) {
+                if (frameCount % 6 === 0) {
                     console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel3[Math.floor(Math.random() * this.obstaclesImagesLevel3.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
@@ -240,6 +259,8 @@ class Game {
                         return true;
                     }
                 })
+
+                this.drawScore();
             }    
         }
 
@@ -269,6 +290,8 @@ class Game {
         const popupTextSize = textSize(36);
         const popupTextFont = textFont('Montserrat')
         const popupTextAlign = textAlign(CENTER,CENTER)
+    
+        
     }
 
     drawButton() {
@@ -276,6 +299,20 @@ class Game {
         const button = rect(288.75, 375, 165, 37.5, 100, 100, 100, 100);
         const buttonTextFill = fill('#F0F0EC');
         const buttonTextSize = textSize(18);
+        
+    }
+
+    drawScore() {
+        console.log('drawScoreWorks')
+        fill('rgba(255, 255, 255, 0.46)');
+        noStroke()
+        const scoreBanner = rect(587, 20, width/10*1.8, height/15, 100, 100, 100, 100);
+
+        fill('#444444');
+        textSize(20);
+        textFont('Montserrat')
+        textAlign(CENTER,CENTER)
+        text(`Bites:  ${game.player.score}`, 655, 42); 
     }
 
 }

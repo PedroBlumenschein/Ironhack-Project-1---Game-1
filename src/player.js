@@ -9,6 +9,7 @@ class Player {
         this.height = 75
 
         this.score = 0;
+        this.scoreLimit = 5
 
         this.image = image;
         this.imageLevel2 = imageLevel2;
@@ -27,7 +28,7 @@ class Player {
         else if (game.level === 2) {
             clear()
             game.background.drawBackground();
-            image(this.imageLevel2,this.x, this.y, 80, 80)
+            image(this.imageLevel2,this.x, this.y, this.width, this.height)
         }
 
         else if (game.level === 3) {
@@ -68,21 +69,17 @@ class Player {
 
         this.score += 1
 
-        const scoreDOMValue = this.score
-        const scoreDOMfield = document.querySelector('.score span') 
-        scoreDOMfield.innerHTML = scoreDOMValue
-
     }
 
     playerWin () { 
          //console.log('playerWin works')
-        game.drawRectangle()
+         levelScoreStore = game.player.score
+         game.drawRectangle()
         text(`You are a good 
 dog walker!`, 375, 225)
         game.drawButton()
-        text(`Next level`, 371.25, 393.75)
-        
-
+        text(`Next level`, 371.25, 393.75)  
+        console.log(levelScoreStore)  
     }
 
     playerLost () {
@@ -94,7 +91,7 @@ ate something! You
 are not a very good 
 dog walker :(`, 375, 225)
         game.drawButton()
-        text(`Try again`, 371.25, 393.75)
+        text(`Try again`, 371.25, 393.75);
     }
 
     playerGoToNextLevel() {
@@ -122,8 +119,22 @@ Samba? `, 375, 225)
 
     }
 
+    growSamba () {
 
+        if (this.width < 120) {
+            this.width *= 2;
+            this.height *= 2;
+        }
+        
+    }
 
+    shrinkSamba () {
+
+        if (this.width > 30) {
+            this.width /= 2;
+            this.height /= 2;
+        }
+    }
 
 
 }
