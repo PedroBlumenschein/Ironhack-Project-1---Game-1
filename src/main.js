@@ -54,17 +54,30 @@ function draw() {
 
 // functions & game
 
-//go to next level
+
+//mouse click on pop up inside
 function mouseClicked() {
-    if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 ) {
+    if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 && game.level === 3) {
+        addWinningGif()
+    }
+
+    else if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 ) {
         game.player.playerGoToNextLevel()
     }
     
-    if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.score > 0) {
+    else if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.score > 0) {
                 game.player.playerTryAgain()
             }
 }
 
+function addWinningGif () {
+    const mainContainer = document.querySelector('.container1')
+    const gif = '<img class="sambaImage" src="./assets/SambaGif.gif" alt="samba gif is broken"></img>'
+
+    mainContainer.innerHTML = gif;
+
+    console.log(mainContainer) 
+}
 
 
 

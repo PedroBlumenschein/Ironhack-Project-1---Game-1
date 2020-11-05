@@ -1,7 +1,7 @@
 
 
 class Player {
-    constructor (image, imageLevel2) {
+    constructor (image, imageLevel2, imageLevel3) {
         this.x = width/10 *4;
         this.y = height/10*9;
 
@@ -12,6 +12,7 @@ class Player {
 
         this.image = image;
         this.imageLevel2 = imageLevel2;
+        this.imageLevel3 = imageLevel3;
     }
 
 
@@ -20,13 +21,19 @@ class Player {
         if (game.level === 1) {
             clear()
             game.background.drawBackground();
-            image(this.image,this.x, this.y, 40, 100)
+            image(this.image,this.x, this.y, this.width, this.height)
         }
 
         else if (game.level === 2) {
             clear()
             game.background.drawBackground();
             image(this.imageLevel2,this.x, this.y, 80, 80)
+        }
+
+        else if (game.level === 3) {
+            clear()
+            game.background.drawBackground();
+            image(this.imageLevel3,this.x, this.y, this.width, this.height)
         }
         
 
@@ -67,9 +74,8 @@ class Player {
 
     }
 
-    playerWin () {
-        
-        //console.log('playerWin works')
+    playerWin () { 
+         //console.log('playerWin works')
         game.drawRectangle()
         text(`You are a good 
 dog walker!`, 500, 300)
@@ -78,7 +84,6 @@ dog walker!`, 500, 300)
         
 
     }
-
 
     playerLost () {
         //console.log('playerLost works')
@@ -100,6 +105,20 @@ a very good dog walker :(`, 500, 300)
     playerTryAgain() {
         console.log('try again clicked')
         location.reload()
+    }
+
+    playerWonGame() {
+        game.drawRectangle()
+        textSize(36);
+        text(`Chapeau, 
+you are one of the best 
+dog walkers around. 
+Are you ready to receive
+a congrats directly from 
+Samba? `, 500, 300)
+        game.drawButton()
+        text(`See congrats`, 495, 525)
+
     }
 
 

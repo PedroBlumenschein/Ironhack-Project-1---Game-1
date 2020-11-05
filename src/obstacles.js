@@ -43,6 +43,16 @@ class Obstacle {
                 this.x -= 10
             }
         }
+
+        else if (game.level === 3) {
+            if (this.direction === -20) {
+                this.x += 15
+            }
+    
+            if (this.direction === width) {
+                this.x -= 15
+            }
+        }
     }
 
 

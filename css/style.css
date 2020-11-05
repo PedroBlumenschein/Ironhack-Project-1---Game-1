@@ -53,3 +53,9 @@ canvas {
     color: gainsboro;
     font-weight: 100;
 }
+
+.sambaImage {
+    width: 15vw;
+    height: auto;
+    border-radius: 12px;
+}
