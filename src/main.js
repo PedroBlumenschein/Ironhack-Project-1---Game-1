@@ -59,13 +59,13 @@ function mouseClicked() {
     if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.y < -30 ) {
         game.player.playerGoToNextLevel()
     }
+    
+    if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.score > 0) {
+                game.player.playerTryAgain()
+            }
 }
 
-// function mouseClicked() {
-//     if (mouseX > 385 && mouseX < 605 && mouseY > 500 && mouseY < 550 && game.player.score > 0) {
-//         game.player.playerTryAgain()
-//     }
-// }
+
 
 
 
