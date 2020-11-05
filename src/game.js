@@ -6,27 +6,27 @@ class Game {
     preloadGame () {
 
         //------------------Background Images----------------------------
-        this.level1BackgroundImage = loadImage("../assets/Level1BackgroundImage.png")
+        this.level1BackgroundImage = loadImage("./assets/Level1BackgroundImage.png")
         this.level2BackgroundImage = loadImage("./assets/Level2Background.png")
         
         //----------------------Player images----------------------------
-        this.playerImage = loadImage("../assets/Samba2.png")
-        this.playerImageLevel2 = loadImage("../assets/unicorn.png")
+        this.playerImage = loadImage("./assets/Samba2.png")
+        this.playerImageLevel2 = loadImage("./assets/unicorn.png")
         
         //---------------------obstacle images---------------------------
         //food
         this.obstacleImage1 = loadImage("../assets/hamburger_1f354.png")
-        this.obstacleImage2 = loadImage("../assets/shaved-ice_1f367.png")
-        this.obstacleImage3 = loadImage("../assets/chocolate-bar_1f36b.png")
-        this.obstacleImage4 = loadImage("../assets/doughnut_1f369.png")
+        this.obstacleImage2 = loadImage("./assets/shaved-ice_1f367.png")
+        this.obstacleImage3 = loadImage("./assets/chocolate-bar_1f36b.png")
+        this.obstacleImage4 = loadImage("./assets/doughnut_1f369.png")
 
         //sweets
-        this.obstacleImage5 = loadImage("../assets/mushroomObstacle.png")
-        this.obstacleImage6 = loadImage("../assets/sushiObstacle.png")
-        this.obstacleImage7 = loadImage("../assets/watermelonOBstacle.png")
+        this.obstacleImage5 = loadImage("./assets/mushroomObstacle.png")
+        this.obstacleImage6 = loadImage("./assets/sushiObstacle.png")
+        this.obstacleImage7 = loadImage("./assets/watermelonOBstacle.png")
         
         //---------------------Win/lose Images---------------------------
-        this.playerWonImage = loadImage("../assets/SambaGif.gif")
+        this.playerWonImage = loadImage("./assets/SambaGif.gif")
     }
 
 
