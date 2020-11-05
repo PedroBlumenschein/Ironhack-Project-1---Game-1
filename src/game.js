@@ -8,7 +8,7 @@ class Game {
         //------------------Background Images----------------------------
         this.level1BackgroundImage = loadImage("./assets/Level1BackgroundImage.png")
         this.level2BackgroundImage = loadImage("./assets/Level2Background.png")
-        this.level3BackgroundImage = loadImage("/assets/backgroundlevel3version2.png")
+        this.level3BackgroundImage = loadImage("./assets/backgroundlevel3version2.png")
         
         //----------------------Player images----------------------------
         this.playerImage = loadImage("./assets/Samba2.png")
