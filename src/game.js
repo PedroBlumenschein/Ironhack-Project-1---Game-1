@@ -8,7 +8,7 @@ class Game {
         //------------------Background Images----------------------------
         this.level1BackgroundImage = loadImage("./assets/Level1BackgroundImage.png")
         this.level2BackgroundImage = loadImage("./assets/Level2Background.png")
-        this.level3BackgroundImage = loadImage("./assets/Backgroundtest.png")
+        this.level3BackgroundImage = loadImage("/assets/backgroundlevel3version2.png")
         
         //----------------------Player images----------------------------
         this.playerImage = loadImage("./assets/Samba2.png")
@@ -32,9 +32,10 @@ class Game {
         this.obstacleImage8 = loadImage("./assets/beer2.png")
         this.obstacleImage9 = loadImage("./assets/pill.png")
         this.obstacleImage10 = loadImage("./assets/mushroomObstacle.png")
+        this.obstacleImage11 = loadImage("./assets/cup.png")
 
         //coronavirus
-        this.obstacleImage11 = loadImage("./assets/coronavirus.png")
+        this.obstacleImage12 = loadImage("./assets/coronavirus.png")
 
         
         //---------------------Win/lose Images---------------------------
@@ -78,7 +79,9 @@ class Game {
         this.obstaclesImagesLevel3 = [
             this.obstacleImage8,
             this.obstacleImage9,
-            this.obstacleImage10
+            this.obstacleImage10,
+            this.obstacleImage11,
+            this.obstacleImage12
             ]
         
 
@@ -215,7 +218,7 @@ class Game {
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
-                if (frameCount % 4 === 0) {
+                if (frameCount % 3 === 0) {
                     console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel3[Math.floor(Math.random() * this.obstaclesImagesLevel3.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];

@@ -46,11 +46,11 @@ class Obstacle {
 
         else if (game.level === 3) {
             if (this.direction === -20) {
-                this.x += 15
+                this.x += 5
             }
     
             if (this.direction === width) {
-                this.x -= 15
+                this.x -= 5
             }
         }
     }
@@ -62,7 +62,7 @@ class Obstacle {
         let playerX = playerInfo.x + playerInfo.width / 2;
         let playerY = playerInfo.y + playerInfo.height / 2;
 
-        if (dist(obstacleX, obstacleY, playerX, playerY) > 25) {
+        if (dist(obstacleX, obstacleY, playerX, playerY) > 40) {
             return false;
         } else {
             game.player.increaseScore();
