@@ -15,7 +15,7 @@ class Game {
         
         //---------------------obstacle images---------------------------
         //food
-        this.obstacleImage1 = loadImage("../assets/hamburger_1f354.png")
+        this.obstacleImage1 = loadImage("./assets/hamburger_1f354.png")
         this.obstacleImage2 = loadImage("./assets/shaved-ice_1f367.png")
         this.obstacleImage3 = loadImage("./assets/chocolate-bar_1f36b.png")
         this.obstacleImage4 = loadImage("./assets/doughnut_1f369.png")
