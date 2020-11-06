@@ -85,7 +85,7 @@ dog walker!`, 375, 225)
         game.drawRectangle()
         textSize(32);
         text(`Ops, Samba 
-ate something! You 
+ate too much! You 
 are not a very good 
 dog walker :(`, 375, 225)
         game.drawButton()
