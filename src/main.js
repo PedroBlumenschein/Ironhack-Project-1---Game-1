@@ -1,5 +1,5 @@
 //test 
-console.log('it works')
+//console.log('it works')
 
 
 //variables
@@ -101,7 +101,7 @@ function addWinningGif () {
 
     mainContainer.innerHTML = gif;
 
-    console.log(mainContainer) 
+    //console.log(mainContainer) 
 }
 
 

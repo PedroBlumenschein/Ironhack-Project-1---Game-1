@@ -77,7 +77,7 @@ class Player {
 dog walker!`, 375, 225)
         game.drawButton()
         text(`Next level`, 371.25, 393.75)  
-        console.log(levelScoreStore)  
+        //console.log(levelScoreStore)  
     }
 
     playerLost () {

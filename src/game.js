@@ -94,7 +94,7 @@ class Game {
 
     drawGame () {
 
-        console.log('drawGame works')
+        //console.log('drawGame works')
         
 
 
@@ -120,19 +120,19 @@ class Game {
     
             else {
 
-                console.log(this.player.y)
+                //console.log(this.player.y)
     
     
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
                 if (frameCount % 10 === 0) {
-                    console.log('print obstacle')
+                    //console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel1[Math.floor(Math.random() * (this.obstaclesImagesLevel1.length))];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
                     this.obstacles.push(new Obstacle (randomImage, randomDirection));
                     
-                    console.log(this.obstacles);
+                    //console.log(this.obstacles);
                 }
         
                 this.obstacles.forEach (function (item) {
@@ -174,7 +174,7 @@ class Game {
             } 
     
             else {
-                console.log(this.player.y)
+                //console.log(this.player.y)
 
                 //this.background.image = this.level2BackgroundImage
     
@@ -183,12 +183,12 @@ class Game {
                 this.player.drawPlayer();
                 
                 if (frameCount % 10 === 0) {
-                    console.log('print obstacle')
+                    //console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel2[Math.floor(Math.random() * this.obstaclesImagesLevel2.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
                     this.obstacles.push(new Obstacle (randomImage, randomDirection));
                     
-                    console.log(this.obstacles);
+                    //console.log(this.obstacles);
                 }
         
                 this.obstacles.forEach (function (item) {
@@ -230,7 +230,7 @@ class Game {
             } 
     
             else {
-                console.log(this.player.y)
+                //console.log(this.player.y)
 
                 //this.background.image = this.level2BackgroundImage
     
@@ -239,12 +239,12 @@ class Game {
                 this.player.drawPlayer();
                 
                 if (frameCount % 8 === 0) {
-                    console.log('print obstacle')
+                    //console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel3[Math.floor(Math.random() * this.obstaclesImagesLevel3.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
                     this.obstacles.push(new Obstacle (randomImage, randomDirection));
                     
-                    console.log(this.obstacles);
+                    //console.log(this.obstacles);
                 }
         
                 this.obstacles.forEach (function (item) {
@@ -304,7 +304,7 @@ class Game {
     }
 
     drawScore() {
-        console.log('drawScoreWorks')
+        //console.log('drawScoreWorks')
         fill('rgba(255, 255, 255, 0.46)');
         noStroke()
         const scoreBanner = rect(587, 20, width/10*1.8, height/15, 100, 100, 100, 100);
