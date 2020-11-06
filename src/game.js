@@ -11,9 +11,10 @@ class Game {
         this.level3BackgroundImage = loadImage("./assets/backgroundlevel3version2.png")
         
         //----------------------Player images----------------------------
-        this.playerImage = loadImage("./assets/Samba2.png")
-        this.playerImageLevel2 = loadImage("./assets/Samba2.png")
-        this.playerImageLevel3 = loadImage("./assets/Samba2.png")
+        this.playerImage = loadImage("./assets/SambaGoodSize.png")
+        this.playerImageLevel2 = loadImage("./assets/SambaGoodSize.png")
+        this.playerImageLevel3 = loadImage("./assets/SambaGoodSize.png")
+        this.playerImageSuperSamba = loadImage("./assets/SuperSambaGoodSize.png")
         
         //---------------------obstacle images---------------------------
         
@@ -70,7 +71,7 @@ class Game {
             this.obstacleImage2, 
             this.obstacleImage3, 
             this.obstacleImage4,
-            this.obstacleImage5,
+            //this.obstacleImage5,
             this.obstacleImage6,
             this.obstacleImage7
             ]

@@ -78,10 +78,20 @@ function keyPressed() {
         game.player.growSamba();
     }
 
-    else if (keyCode === 83) {
+    else if (keyCode === 72) {
         game.player.shrinkSamba();
     }
 
+    else if (keyCode === 83) {
+        game.player.superSamba();
+    }
+
+    else if (keyCode === 78) {
+        game.player.normalSamba();
+    }
+
+
+    
 }
 
 

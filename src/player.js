@@ -12,8 +12,8 @@ class Player {
         this.scoreLimit = 5
 
         this.image = image;
-        this.imageLevel2 = imageLevel2;
-        this.imageLevel3 = imageLevel3;
+        this.imageLevel2 = imageLevel2; // not being used 
+        this.imageLevel3 = imageLevel3; //not being used
     }
 
 
@@ -28,13 +28,13 @@ class Player {
         else if (game.level === 2) {
             clear()
             game.background.drawBackground();
-            image(this.imageLevel2,this.x, this.y, this.width, this.height)
+            image(this.image,this.x, this.y, this.width, this.height)
         }
 
         else if (game.level === 3) {
             clear()
             game.background.drawBackground();
-            image(this.imageLevel3,this.x, this.y, this.width, this.height)
+            image(this.image,this.x, this.y, this.width, this.height)
         }
         
 
@@ -134,5 +134,13 @@ Samba? `, 375, 225)
         }
     }
 
+    superSamba() {
+        this.image = game.playerImageSuperSamba
+
+    }
+
+    normalSamba() {
+        this.image = game.playerImage
+    }
 
 }
