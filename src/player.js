@@ -66,9 +66,7 @@ class Player {
     }
 
     increaseScore() {
-
         this.score += 1
-
     }
 
     playerWin () { 
@@ -108,7 +106,7 @@ dog walker :(`, 375, 225)
     playerWonGame() {
         game.drawRectangle()
         textSize(24);
-        text(`Chapeau, 
+        text(`"Chapeau", 
 you are one of the best 
 dog walkers around! 
 Are you ready to receive

@@ -38,21 +38,21 @@ class Obstacle {
 
         else if (game.level === 2) {
             if (this.direction === -20) {
-                this.x += 10
+                this.x += 7
             }
     
             if (this.direction === width) {
-                this.x -= 10
+                this.x -= 7
             }
         }
 
         else if (game.level === 3) {
             if (this.direction === -20) {
-                this.x += 5
+                this.x += 10
             }
     
             if (this.direction === width) {
-                this.x -= 5
+                this.x -= 10
             }
         }
     }

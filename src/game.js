@@ -181,7 +181,7 @@ class Game {
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
-                if (frameCount % 8 === 0) {
+                if (frameCount % 10 === 0) {
                     console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel2[Math.floor(Math.random() * this.obstaclesImagesLevel2.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
@@ -237,7 +237,7 @@ class Game {
                 this.background.drawBackground();
                 this.player.drawPlayer();
                 
-                if (frameCount % 6 === 0) {
+                if (frameCount % 8 === 0) {
                     console.log('print obstacle')
                     const randomImage = this.obstaclesImagesLevel3[Math.floor(Math.random() * this.obstaclesImagesLevel3.length)];
                     const randomDirection = this.obstacleDirections[Math.floor(Math.random() * this.obstacleDirections.length)];
